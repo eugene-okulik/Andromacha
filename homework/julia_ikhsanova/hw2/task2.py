@@ -9,4 +9,5 @@ class HW_Task2:
         print(c)
 
 new = HW_Task2()
+
 new.addition()

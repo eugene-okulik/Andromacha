@@ -1,5 +1,5 @@
 class HW_Task1:
-# Даны 2 числа a и b. Получить их сумму, разность и произведение
+    # Даны 2 числа a и b. Получить их сумму, разность и произведение
 
     a = 100
     b = 2
@@ -17,6 +17,7 @@ class HW_Task1:
         print(c)
 
 new = HW_Task1()
+
 new.addition()
 new.subtraction()
 new.multiplication()
