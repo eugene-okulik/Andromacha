@@ -5,17 +5,16 @@ class HW_Task1:
     b = 2
 
     def addition(self):
-        c=self.a+self.b
+        c = self.a + self.b
         print(c)
 
     def subtraction(self):
-        c=self.a - self.b
+        c = self.a - self.b
         print(c)
 
     def multiplication(self):
-        c=self.a*self.b
+        c = self.a * self.b
         print(c)
-
 
 new = HW_Task1()
 new.addition()

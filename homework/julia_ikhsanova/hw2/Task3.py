@@ -5,14 +5,12 @@ class HW_Task3:
     b = 10
 
     def addition(self):
-        c=(self.a + self.b)/2
+        c = (self.a + self.b) / 2
         print(c)
 
     def geometric_mean(self):
-        l=(self.a * self.b)/2
+        l = (self.a * self.b) / 2
         print(l)
-
-
 
 new = HW_Task3()
 new.addition()
