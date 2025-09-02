@@ -1,5 +1,6 @@
 import math
 
+
 class HW_Task4:
     a = 100
     b = 10
