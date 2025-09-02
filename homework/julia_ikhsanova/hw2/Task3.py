@@ -1,5 +1,4 @@
 class HW_Task3:
-    # Даны два числа. Найти среднее арифметическое и среднее геометрическое этих чисел
 
 
     a = 100
@@ -8,7 +7,6 @@ class HW_Task3:
     def addition(self):
         c = (self.a + self.b) / 2
         print(c)
-
 
     def geometric_mean(self):
         lst = (self.a * self.b) / 2
