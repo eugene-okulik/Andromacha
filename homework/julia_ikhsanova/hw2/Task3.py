@@ -1,6 +1,4 @@
 class HW_Task3:
-
-
     a = 100
     b = 10
 
