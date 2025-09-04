@@ -8,6 +8,3 @@ print(last_name)
 print(city)
 print(phone)
 print(country)
-
-
-
