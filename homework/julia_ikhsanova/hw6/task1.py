@@ -1,7 +1,9 @@
-text = "Etiam tincidunt neque erat, quis molestie enim imperdiet vel. Integer urna nisl, facilisis vitae semper at, dignissim vitae libero"
+text = (
+    "Etiam tincidunt neque erat, quis molestie enim imperdiet vel. "
+    "Integer urna nisl, facilisis vitae semper at, dignissim vitae libero"
+)
 
 words = text.split()  # делим на слова
-
 fin_text = []
 
 for word in words:
@@ -11,5 +13,3 @@ for word in words:
         fin_text.append(word + "ing")
 
 print(" ".join(fin_text))
-
-
