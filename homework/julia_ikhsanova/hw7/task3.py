@@ -12,6 +12,7 @@ lines = [
 for line in lines:
     process_line(line)
 
+
 # a = "результат операции: 42"
 # qa = a.split()
 # qaz = int(qa[-1])
@@ -24,4 +25,3 @@ for line in lines:
 # c = "результат работы программы: 9"
 # qc = int(c.split(":")[1])
 # print(10 + qc)
-
