@@ -16,7 +16,6 @@ for i, g in enumerate(gen()):
     if i in (5, 100, 1000, 100000):
         print(g)
 
-
     # if i == 5: print(g)
     # elif i == 200: print(g)
     # elif i == 1000: print(g)
