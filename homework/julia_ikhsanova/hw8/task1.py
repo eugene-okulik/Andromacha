@@ -1,5 +1,6 @@
 import random
 
+
 salary = int(input("Enter salary: "))
 bonus = random.choice([True, False])
 
