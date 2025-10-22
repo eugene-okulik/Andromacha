@@ -11,6 +11,7 @@ def operation_decorator(func):
         return func(first, second, operation)
     return wrapper
 
+
 @operation_decorator
 def calc(first, second, operation):
     if operation == '+':
@@ -25,6 +26,7 @@ def calc(first, second, operation):
         return first / second
     else:
         return "Неизвестная операция"
+
 
 a = float(input("Введите число: "))
 b = float(input("Введите число: "))
