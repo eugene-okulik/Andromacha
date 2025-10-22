@@ -13,6 +13,7 @@ def example(text):
 
 example('print me', 0)
 
+
 # def repeat_me(count=1):               # сюда попадает число повторений
 #     def decorator(func):              # сюда попадает функция example
 #         def wrapper(*args, **kwargs): # это "обёртка", которая запускает функцию
