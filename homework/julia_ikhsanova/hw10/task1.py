@@ -1,10 +1,7 @@
 def finish_me(func):
-
-
     def wrapper(*args):
         func(*args)
         print("finished")
-
     return wrapper
 
 
@@ -14,4 +11,3 @@ def example(text):
 
 
 example('print me')
-
