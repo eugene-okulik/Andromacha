@@ -7,13 +7,12 @@ def repeat_me(func):
 
     return wrapper
 
-
 @repeat_me
 def example(text):
     print(text)
 
-
 example('print me', 0)
+
 
 
 
