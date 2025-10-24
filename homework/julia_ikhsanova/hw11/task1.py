@@ -28,6 +28,7 @@ class Book:
 # fifth_book = Book("Идиот", "Достоевский", 13, 500, True)
 # fifth_book.print_book()
 
+
 class SchoolTextbooks(Book):
     def __init__(self, title, author, pages, isbn, is_reserved, subject, school_grade, has_exercises: bool):
         super().__init__(title, author, pages, isbn, is_reserved)
@@ -50,11 +51,4 @@ fifth_Textbook = SchoolTextbooks("Алгебра", "Иванов", 100, 11, True
 fifth_Textbook.print_Textbook()
 second_Textbook = SchoolTextbooks("Всеобщая история", "Сидоров", 200, 12, False, "История", 10, False)
 second_Textbook.print_Textbook()
-
-
-
-
-
-
-
 
