@@ -29,7 +29,7 @@ class Book:
 # fifth_book.print_book()
 
 class SchoolTextbooks(Book):
-    def __init__(self,title, author, pages, isbn, is_reserved, subject, school_grade, has_exercises: bool):
+    def __init__(self, title, author, pages, isbn, is_reserved, subject, school_grade, has_exercises: bool):
         super().__init__(title, author, pages, isbn, is_reserved)
         self.subject = subject
         self.school_grade = school_grade
@@ -46,11 +46,10 @@ class SchoolTextbooks(Book):
         else:
             print(Textbook)
 
-fifth_Textbook = SchoolTextbooks( "Алгебра", "Иванов", 100, 11, True, "Математика", 11, True)
+fifth_Textbook = SchoolTextbooks("Алгебра", "Иванов", 100, 11, True, "Математика", 11, True)
 fifth_Textbook.print_Textbook()
-second_Textbook = SchoolTextbooks( "Всеобщая история", "Сидоров", 200, 12, False, "История", 10, False)
+second_Textbook = SchoolTextbooks("Всеобщая история", "Сидоров", 200, 12, False, "История", 10, False)
 second_Textbook.print_Textbook()
-
 
 
 
