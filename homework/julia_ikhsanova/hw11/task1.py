@@ -45,6 +45,7 @@ class SchoolTextbooks(Book):
         else:
             print(Textbook)
 
+
 fifth_Textbook = SchoolTextbooks("Алгебра", "Иванов", 100, 11, True, "Математика", 11, True)
 fifth_Textbook.print_Textbook()
 second_Textbook = SchoolTextbooks("Всеобщая история", "Сидоров", 200, 12, False, "История", 10, False)
