@@ -15,8 +15,6 @@ class Book:
             print(book + ", Зарезервирована")
         else:
             print(book)
-
-
 # first_book = Book("Идиот", "Достоевский", 10, 100, True)
 # first_book.print_book()
 # second_book = Book("Идиот", "Достоевский", 11, 200, False)
@@ -51,4 +49,3 @@ fifth_Textbook = SchoolTextbooks("Алгебра", "Иванов", 100, 11, True
 fifth_Textbook.print_Textbook()
 second_Textbook = SchoolTextbooks("Всеобщая история", "Сидоров", 200, 12, False, "История", 10, False)
 second_Textbook.print_Textbook()
-
