@@ -9,12 +9,12 @@ class Flowers:
 
     def __repr__(self):
         return (
-            "Flowers(name='" + self.name +
-            "', bud_color='" + self.bud_color +
-            "', leaves=" + str(self.leaves) +
-            ", stem=" + str(self.stem) +
-            ", lifetime=" + str(self.lifetime) +
-            ", price=" + str(self.price) + ")"
+            f"Flowers(name='{self.name}', "
+            f"bud_color='{self.bud_color}', "
+            f"leaves={self.leaves}, "
+            f"stem={self.stem}, "
+            f"lifetime={self.lifetime}, "
+            f"price={self.price})"
         )
 
 
@@ -25,13 +25,13 @@ class Garden_flowers(Flowers):
 
     def __repr__(self):
         return (
-            "Garden_flowers(name='" + self.name +
-            "', bud_color='" + self.bud_color +
-            "', leaves=" + str(self.leaves) +
-            ", stem=" + str(self.stem) +
-            ", lifetime=" + str(self.lifetime) +
-            ", price=" + str(self.price) +
-            ", fertilizer='" + self.fertilizer + "')"
+            f"Garden_flowers(name='{self.name}', "
+            f"bud_color='{self.bud_color}', "
+            f"leaves={self.leaves}, "
+            f"stem={self.stem}, "
+            f"lifetime={self.lifetime}, "
+            f"price={self.price}, "
+            f"fertilizer='{self.fertilizer}')"
         )
 
 
@@ -46,13 +46,13 @@ class Wildflowers(Flowers):
 
     def __repr__(self):
         return (
-            "Wildflowers(name='" + self.name +
-            "', bud_color='" + self.bud_color +
-            "', leaves=" + str(self.leaves) +
-            ", stem=" + str(self.stem) +
-            ", lifetime=" + str(self.lifetime) +
-            ", price=" + str(self.price) +
-            ", habitat='" + self.habitat + "')"
+            f"Wildflowers(name='{self.name}', "
+            f"bud_color='{self.bud_color}', "
+            f"leaves={self.leaves}, "
+            f"stem={self.stem}, "
+            f"lifetime={self.lifetime}, "
+            f"price={self.price}, "
+            f"habitat='{self.habitat}')"
         )
 
 
