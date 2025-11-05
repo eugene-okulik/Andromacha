@@ -8,12 +8,14 @@ class Flowers:
         self.price = price
 
     def __repr__(self):
-        return ("Flowers(name='" + self.name +
-                "', bud_color='" + self.bud_color +
-                "', leaves=" + str(self.leaves) +
-                ", stem=" + str(self.stem) +
-                ", lifetime=" + str(self.lifetime) +
-                ", price=" + str(self.price) + ")")
+        return (
+            "Flowers(name='" + self.name +
+            "', bud_color='" + self.bud_color +
+            "', leaves=" + str(self.leaves) +
+            ", stem=" + str(self.stem) +
+            ", lifetime=" + str(self.lifetime) +
+            ", price=" + str(self.price) + ")"
+        )
 
 
 class Garden_flowers(Flowers):
@@ -22,13 +24,16 @@ class Garden_flowers(Flowers):
         self.fertilizer = fertilizer
 
     def __repr__(self):
-        return ("Garden_flowers(name='" + self.name +
-                "', bud_color='" + self.bud_color +
-                "', leaves=" + str(self.leaves) +
-                ", stem=" + str(self.stem) +
-                ", lifetime=" + str(self.lifetime) +
-                ", price=" + str(self.price) +
-                ", fertilizer='" + self.fertilizer + "')")
+        return (
+            "Garden_flowers(name='" + self.name +
+            "', bud_color='" + self.bud_color +
+            "', leaves=" + str(self.leaves) +
+            ", stem=" + str(self.stem) +
+            ", lifetime=" + str(self.lifetime) +
+            ", price=" + str(self.price) +
+            ", fertilizer='" + self.fertilizer + "')"
+        )
+
 
 lily = Garden_flowers("лилия", "white", 1, 40, 7, "yes", 8000)
 peony = Garden_flowers("пион", "pink", 2, 10, 5, "yes", 6)
@@ -40,20 +45,25 @@ class Wildflowers(Flowers):
         self.habitat = habitat
 
     def __repr__(self):
-        return ("Wildflowers(name='" + self.name +
-                "', bud_color='" + self.bud_color +
-                "', leaves=" + str(self.leaves) +
-                ", stem=" + str(self.stem) +
-                ", lifetime=" + str(self.lifetime) +
-                ", price=" + str(self.price) +
-                ", habitat='" + self.habitat + "')")
+        return (
+            "Wildflowers(name='" + self.name +
+            "', bud_color='" + self.bud_color +
+            "', leaves=" + str(self.leaves) +
+            ", stem=" + str(self.stem) +
+            ", lifetime=" + str(self.lifetime) +
+            ", price=" + str(self.price) +
+            ", habitat='" + self.habitat + "')"
+        )
+
 
 poppy = Wildflowers("мак", "red", 3, 3, 9, "луг", 17)
 bellflower = Wildflowers("колокольчик", "blue", 4, 1, 15, "поле", 5)
 
 
 class Bouquet:
-    def __init__(self, flowers=[]):
+    def __init__(self, flowers=None):
+        if flowers is None:
+            flowers = []
         self.flowers = flowers
 
     def bouquet_price(self):
@@ -66,19 +76,18 @@ class Bouquet:
         total = 0
         count = 0
         for f in self.flowers:
-            total = total + f.lifetime
+            total += f.lifetime
             count += 1
         print(total / count)
 
     def sort_by(self, parameter):
         self.flowers.sort(key=lambda f: getattr(f, parameter))
         for f in self.flowers:
-            print(f.name , getattr(f, parameter))
+            print(f.name, getattr(f, parameter))
 
     def find_by(self, attribute, value):
-        found_values = []  # создаём пустой список
+        found_values = []
         for f in self.flowers:
-            # если атрибут совпадает с нужным значением, добавляем значение в список
             if getattr(f, attribute) == value:
                 found_values.append(getattr(f, attribute))
         return found_values
@@ -89,4 +98,3 @@ print(my_bouquet.find_by("bud_color", "red"))
 my_bouquet.sort_by("price")
 my_bouquet.sort_by("bud_color")
 my_bouquet.sort_by("stem")
-
