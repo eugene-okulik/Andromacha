@@ -12,6 +12,7 @@ class Garden_flowers(Flowers):
         super().__init__(bud_color, leaves, stem, lifetime, price)
         self.fertilizer = fertilizer
 
+
 lily = Garden_flowers("white", 1, 40, 7, "yes", 1000)
 peony = Garden_flowers("pink", 2, 10, 5, "yes", 2000)
 
@@ -21,12 +22,13 @@ class Wildflowers(Flowers):
         super().__init__(bud_color, leaves, stem, lifetime, price)
         self.habitat = habitat
 
+
 poppy = Wildflowers("red", 3, 30, 9, "луг", 17)
 bellflower = Wildflowers("pink", 4, 40, 15, "поле", 5)
 
 
-class Bouquet():
-    def __init__(self, flowers = []):
+class Bouquet:
+    def __init__(self, flowers=[]):
         self.flowers = flowers
 
     def bouquet_price(self):
@@ -39,14 +41,14 @@ class Bouquet():
         total = 0
         count = 0
         for f in self.flowers:
-            total = (total + f.lifetime)
+            total = total + f.lifetime
             count += 1
-        print(total/count)
+        print(total / count)
 
     # Сортировка цветов по заданному атрибуту
     def sort_flowers(self, attribute):
         flowers_with_values = []
-        for f in self.flowers:  #Проходим по всем цветам, которые хранятся в self.flowers
+        for f in self.flowers:  # Проходим по всем цветам, которые хранятся в self.flowers
             if attribute == "price":
                 value = f.price
             elif attribute == "lifetime":
