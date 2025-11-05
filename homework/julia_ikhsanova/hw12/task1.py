@@ -1,30 +1,55 @@
 class Flowers:
-    def __init__(self, bud_color, leaves, stem, lifetime, price):
-        self.bud = bud_color
+    def __init__(self, name, bud_color, leaves, stem, lifetime, price):
+        self.name = name
+        self.bud_color = bud_color
         self.leaves = leaves
         self.stem = stem
         self.lifetime = lifetime
         self.price = price
 
+    def __repr__(self):
+        return ("Flowers(name='" + self.name +
+                "', bud_color='" + self.bud_color +
+                "', leaves=" + str(self.leaves) +
+                ", stem=" + str(self.stem) +
+                ", lifetime=" + str(self.lifetime) +
+                ", price=" + str(self.price) + ")")
+
 
 class Garden_flowers(Flowers):
-    def __init__(self, bud_color, leaves, stem, lifetime, fertilizer, price):
-        super().__init__(bud_color, leaves, stem, lifetime, price)
+    def __init__(self, name, bud_color, leaves, stem, lifetime, fertilizer, price):
+        super().__init__(name, bud_color, leaves, stem, lifetime, price)
         self.fertilizer = fertilizer
 
+    def __repr__(self):
+        return ("Garden_flowers(name='" + self.name +
+                "', bud_color='" + self.bud_color +
+                "', leaves=" + str(self.leaves) +
+                ", stem=" + str(self.stem) +
+                ", lifetime=" + str(self.lifetime) +
+                ", price=" + str(self.price) +
+                ", fertilizer='" + self.fertilizer + "')")
 
-lily = Garden_flowers("white", 1, 40, 7, "yes", 1000)
-peony = Garden_flowers("pink", 2, 10, 5, "yes", 2000)
+lily = Garden_flowers("лилия", "white", 1, 40, 7, "yes", 8000)
+peony = Garden_flowers("пион", "pink", 2, 10, 5, "yes", 6)
 
 
 class Wildflowers(Flowers):
-    def __init__(self, bud_color, leaves, stem, lifetime, habitat, price):
-        super().__init__(bud_color, leaves, stem, lifetime, price)
+    def __init__(self, name, bud_color, leaves, stem, lifetime, habitat, price):
+        super().__init__(name, bud_color, leaves, stem, lifetime, price)
         self.habitat = habitat
 
+    def __repr__(self):
+        return ("Wildflowers(name='" + self.name +
+                "', bud_color='" + self.bud_color +
+                "', leaves=" + str(self.leaves) +
+                ", stem=" + str(self.stem) +
+                ", lifetime=" + str(self.lifetime) +
+                ", price=" + str(self.price) +
+                ", habitat='" + self.habitat + "')")
 
-poppy = Wildflowers("red", 3, 30, 9, "луг", 17)
-bellflower = Wildflowers("pink", 4, 40, 15, "поле", 5)
+poppy = Wildflowers("мак", "red", 3, 3, 9, "луг", 17)
+bellflower = Wildflowers("колокольчик", "blue", 4, 1, 15, "поле", 5)
 
 
 class Bouquet:
@@ -45,34 +70,23 @@ class Bouquet:
             count += 1
         print(total / count)
 
-    # Сортировка цветов по заданному атрибуту
-    def sort_flowers(self, attribute):
-        flowers_with_values = []
-        for f in self.flowers:  # Проходим по всем цветам, которые хранятся в self.flowers
-            if attribute == "price":
-                value = f.price
-            elif attribute == "lifetime":
-                value = f.lifetime
-            elif attribute == "bud_color":
-                value = f.bud
-            elif attribute == "leaves":
-                value = f.leaves
-            elif attribute == "stem":
-                value = f.stem
-            else:
-                continue
-            flowers_with_values.append((value, f))
-        flowers_with_values.sort(key=lambda x: x[0])
-        return [f[1] for f in flowers_with_values]
-
-    # Поиск цветов по заданному атрибуту
-    def find_by(self, attribute, value):
-        found = []
+    def sort_by(self, parameter):
+        self.flowers.sort(key=lambda f: getattr(f, parameter))
         for f in self.flowers:
-            if hasattr(f, attribute) and getattr(f, attribute) == value:
-                found.append(f)
-        return found
+            print(f.name , getattr(f, parameter))
 
-# my_bouquet = Bouquet([lily, peony, poppy, bellflower])
-# my_bouquet.bouquet_price()
-# my_bouquet.average_lifetime()
+    def find_by(self, attribute, value):
+        found_values = []  # создаём пустой список
+        for f in self.flowers:
+            # если атрибут совпадает с нужным значением, добавляем значение в список
+            if getattr(f, attribute) == value:
+                found_values.append(getattr(f, attribute))
+        return found_values
+
+
+my_bouquet = Bouquet([lily, peony, poppy, bellflower])
+print(my_bouquet.find_by("bud_color", "red"))
+my_bouquet.sort_by("price")
+my_bouquet.sort_by("bud_color")
+my_bouquet.sort_by("stem")
+
