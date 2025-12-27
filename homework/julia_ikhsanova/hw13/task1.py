@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+
 file_path = "/Users/juliaikhsanova/PycharmProjects/Andromacha/homework/eugene_okulik/hw_13/data.txt"
 
 date_formats = [
@@ -9,6 +10,7 @@ date_formats = [
     '%Y',
 ]
 
+
 def parse_date(date_str):
     for fmt in date_formats:
         try:
@@ -16,6 +18,7 @@ def parse_date(date_str):
         except ValueError:
             continue
     return None
+
 
 with open(file_path, 'r') as file:
     for line in file:
@@ -30,9 +33,8 @@ with open(file_path, 'r') as file:
             print(f"Неверный формат строки: {line}")
             continue
 
-        # Берём всю дату до первого пробела после даты
-        # Чтобы включить время, если оно есть
-        date_part = rest.strip().split(' -')[0]  # если после даты идёт " - текст"
+
+        date_part = rest.strip().split(' -')[0]
         date_obj = parse_date(date_part)
 
         if not date_obj:
