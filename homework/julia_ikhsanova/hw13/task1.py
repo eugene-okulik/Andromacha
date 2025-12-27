@@ -33,7 +33,6 @@ with open(file_path, 'r') as file:
             print(f"Неверный формат строки: {line}")
             continue
 
-
         date_part = rest.strip().split(' -')[0]
         date_obj = parse_date(date_part)
 
